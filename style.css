@@ -11,7 +11,7 @@ header {
   padding: 16px;
   text-align: center;
 }
-
+  
 .section-title {
   text-align: center;
   font-size: 24px;
@@ -26,7 +26,7 @@ header {
 }
 
 .product-box {
-  width: 23%;
+  width: 20%;
   margin: 1%;
   display: inline-block;
   vertical-align: top;
