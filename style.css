@@ -1,0 +1,125 @@
+body {
+  font-family: sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #fa5304;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.product-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product-box {
+  width: 23%;
+  margin: 1%;
+  display: inline-block;
+  vertical-align: top;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  transition: transform 0.2s;
+}
+
+.product-box:hover {
+  transform: scale(1.02);
+}
+
+.product-box img {
+  width: 100%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 10px;
+  text-align: left;
+  height: 40%;
+}
+
+.product-info h3 {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.price {
+  color: #fa5304;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.sold {
+  font-size: 12px;
+  color: #666;
+}
+
+.product-buttons {
+  margin-top: 8px;
+}
+
+.buy-now {
+  background: #ff6600;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.add-cart {
+  font-size: 18px;
+  margin-left: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .product-box {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-box {
+    width: 98%;
+  }
+}
+
+.pagination {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #fa5304;
+  color: white;
+  font-weight: bold;
+}

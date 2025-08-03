@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dareu - Sản phẩm</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Dareu Vietnam</h1>
+  </header>
+
+  <section>
+    <h2 class="section-title">Danh sách Sản phẩm</h2>
+    <div class="product-grid" id="product-grid">
+      <!-- 12 sản phẩm demo -->
+      <div class="product-box">
+        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <div class="product-info">
+          <h3>Chuột Dareu EM908</h3>
+          <p class="price">399.000₫</p>
+          <p class="sold">Đã bán: 150</p>
+          <div class="product-buttons">
+            <button class="buy-now">Mua ngay</button>
+            <button class="add-cart">🛒</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-box">
+        <img src="images/ek75.jpg" alt="Bàn phím Dareu EK75">
+        <div class="product-info">
+          <h3>Bàn phím Dareu EK75</h3>
+          <p class="price">559.000₫</p>
+          <p class="sold">Đã bán: 95</p>
+          <div class="product-buttons">
+            <button class="buy-now">Mua ngay</button>
+            <button class="add-cart">🛒</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thêm 10 sản phẩm khác tương tự -->
+    </div>
+
+    <!-- Phân trang -->
+    <div class="pagination">
+      <button class="active" onclick="changePage(1)">1</button>
+      <button onclick="changePage(2)">2</button>
+      <button onclick="changePage(3)">3</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
