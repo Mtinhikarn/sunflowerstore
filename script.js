@@ -60,9 +60,9 @@ const products = [
   "Chuột Dareu EM901",
   "Bàn phím cơ Dareu EK1280",
   "Tai nghe gaming Dareu A710"
+  // Thêm các sản phẩm khác ở đây
 ];
 
-// Tìm gợi ý
 function filterSuggestions() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const suggestionsBox = document.getElementById("suggestions");
@@ -75,35 +75,11 @@ function filterSuggestions() {
     const div = document.createElement("div");
     div.textContent = match;
     div.onclick = () => {
-  window.location.href = "product.html?name=" + encodeURIComponent(match);
-};
-
+      document.getElementById("searchInput").value = match;
+      suggestionsBox.innerHTML = "";
+      // Có thể thêm điều hướng đến sản phẩm ở đây nếu muốn
+    };
     suggestionsBox.appendChild(div);
   });
 }
-
-// Lọc và chỉ hiện sản phẩm khớp tên
-function filterProductByName(name) {
-  const allProducts = document.querySelectorAll(".product-box");
-  let found = false;
-
-  allProducts.forEach(product => {
-    const title = product.querySelector("h3").textContent.trim();
-    if (title.toLowerCase() === name.toLowerCase()) {
-      product.style.display = "inline-block";
-      found = true;
-    } else {
-      product.style.display = "none";
-    }
-  });
-
-  if (!found) {
-    alert("Không tìm thấy sản phẩm");
-  }
-
-  // Xóa trạng thái active phân trang nếu đang bật
-  document.querySelectorAll(".pagination button").forEach(btn => btn.classList.remove("active"));
-}
-
-
 
