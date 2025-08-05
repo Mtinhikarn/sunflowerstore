@@ -9,26 +9,16 @@
 <body>
   <div class="navbar">
   <div class="search-bar">
-    <input type="text" placeholder="Tìm kiếm...">
-    <button>🔍</button>
+    <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." oninput="filterSuggestions()">
+    <button onclick="filterSuggestions()">🔍</button>
+    <button onclick="resetProducts()">Hiển thị tất cả</button>
+    <div id="suggestions" class="suggestions-box"></div>
   </div>
-
-  <div class="nav-links">
-    <a href="#">SẢN PHẨM</a>
-    <a href="#">TIN TỨC</a>
-    <a href="#" onclick="requireLogin(event)">HỖ TRỢ</a>
+  <div class="right-links">
     <a href="#" onclick="requireLogin(event)">LIÊN HỆ</a>
-    <a href="#" onclick="showLogin()">ĐĂNG NHẬP</a><input type="text" placeholder="Tìm kiếm...">
-    <button>🔍</button>
-  </div>
+    <a href="#" onclick="requireLogin(event)">HỖ TRỢ</a>
+    <a href="#" onclick="showLogin()">ĐĂNG NHẬP</a>
 
-  <div class="nav-links">
-    <a href="#">SẢN PHẨM</a>
-    <a href="#">TIN TỨC</a>
-    <a href="#">HỖ TRỢ</a>
-    <a href="#">LIÊN HỆ</a>
-    <a href="#">ĐĂNG NHẬP</a>
-  </div>
 </div>
   <header>
     <h1>SunFlowerStore</h1>
@@ -38,8 +28,8 @@
   <div class="slider-wrapper" id="slider">
    <img src="banner.img/Daerubanner1.jpg" alt="">
    <img src="banner.img/Daerubanner2.jpg" alt="">
-   <img src="banner.img/Daerubanner3.jpg" alt="">
-   <img src="banner.img/Daerubanner4.jpg" alt="">
+    <img src="banner.img/Daerubanner3.jpg" alt="">
+    <img src="banner.img/Daerubanner4.jpg" alt="">
    <img src="banner.img/Daerubanner5.jpg" alt="">
    <img src="banner.img/Daerubanner6.jpg" alt="">
 
