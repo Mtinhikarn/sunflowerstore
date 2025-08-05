@@ -7,20 +7,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="navbar">
+  <div class="search-bar">
+    <input type="text" placeholder="Tìm kiếm...">
+    <button>🔍</button>
+  </div>
+
+  <div class="nav-links">
+    <a href="#">SẢN PHẨM</a>
+    <a href="#">TIN TỨC</a>
+    <a href="#" onclick="requireLogin(event)">HỖ TRỢ</a>
+    <a href="#" onclick="requireLogin(event)">LIÊN HỆ</a>
+    <a href="#" onclick="showLogin()">ĐĂNG NHẬP</a><input type="text" placeholder="Tìm kiếm...">
+    <button>🔍</button>
+  </div>
+
+  <div class="nav-links">
+    <a href="#">SẢN PHẨM</a>
+    <a href="#">TIN TỨC</a>
+    <a href="#">HỖ TRỢ</a>
+    <a href="#">LIÊN HỆ</a>
+    <a href="#">ĐĂNG NHẬP</a>
+  </div>
+</div>
   <header>
     <h1>SunFlowerStore</h1>
   </header>
+
+  <div class="slider-container">
+  <div class="slider-wrapper" id="slider">
+   <img src="banner.img/Daerubanner1.jpg" alt="">
+   <img src="banner.img/Daerubanner2.jpg" alt="">
+   <img src="banner.img/Daerubanner3.jpg" alt="">
+   <img src="banner.img/Daerubanner4.jpg" alt="">
+   <img src="banner.img/Daerubanner5.jpg" alt="">
+   <img src="banner.img/Daerubanner6.jpg" alt="">
+
+  </div>
+  <button class="nav left" onclick="prevSlide()">&#10094;</button>
+  <button class="nav right" onclick="nextSlide()">&#10095;</button>
+</div>
 
   <section>
     <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/chuot1.jpg" alt="Chuột Dareu EM908">
         <div class="product-info">
           <h3>Chuột Dareu EM908</h3>
+          <p class="old-price">499.000₫</p>
           <p class="price">399.000₫</p>
           <p class="sold">Đã bán: 150</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -29,11 +68,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/ek75.jpg" alt="Bàn phím Dareu EK75">
+        <img src="images/ek75pro.jpg" alt="Bàn phím Dareu EK75 PRO">
         <div class="product-info">
-          <h3>Bàn phím Dareu EK75</h3>
+          <h3>Bàn phím Dareu EK75 PRO</h3>
+          <p class="old-price">1.119.000₫</p>
           <p class="price">559.000₫</p>
           <p class="sold">Đã bán: 95</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -42,11 +83,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek98.jpg" alt="Bàn phím Dareu EK98">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK98</h3>
+          <p class="old-price">999.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 246</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -55,11 +98,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek75proal.jpg" alt="Bàn phím Dareu EK75Pro AL">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru EK75 AL</h3>
+          <p class="old-price">899.000₫</p>
+          <p class="price">499.000₫</p>
+          <p class="sold">Đã bán: 110</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -68,11 +113,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru Ek861</h3>
+          <p class="old-price">1.290.000₫</p>
+          <p class="price">899.000₫</p>
+          <p class="sold">Đã bán: 390</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -81,11 +128,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek104.jpg" alt="Bàn phím Dareu EK104">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK104</h3>
+          <p class="old-price">689.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 132</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -94,11 +143,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek807.jpg" alt="Bàn phím Dareu EK807">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru EK807</h3>
+          <p class="old-price">1.189.000₫</p>
+          <p class="price">879.000₫</p>
+          <p class="sold">Đã bán: 120</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -107,11 +158,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek810.jpg" alt="Bàn phím Dareu EK810">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Bàn phím Dareu EK810</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 139</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -120,11 +173,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Dareu EK861</h3>
+          <p class="old-price">3.699.000</p>
+          <p class="price">2.999.000₫</p>
+          <p class="sold">Đã bán: 490</p>
+          <p class="stock out-of-stock">Hết hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -133,11 +188,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/taingheA710.jpg" alt="Tai nghe Dareu A710">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Tai Nghe Daeru A710</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 340</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -146,11 +203,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/LK135.jpg" alt="Bàn phím Dareu LK135">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK135</h3>
+          <p class="old-price">399.000₫</p>
+          <p class="price">199.000₫</p>
+          <p class="sold">Đã bán: 112</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -159,11 +218,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/LK145.jpg" alt="Bàn phím Dareu LK145">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK145</h3>
+          <p class="old-price">279.000₫</p>
+          <p class="price">179.000₫</p>
+          <p class="sold">Đã bán: 56</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -171,16 +232,18 @@
         </div>
       </div>
 
-      <!-- Thêm 10 sản phẩm khác tương tự -->
+
     </div>
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/chuot1.jpg" alt="Chuột Dareu EM908">
         <div class="product-info">
           <h3>Chuột Dareu EM908</h3>
+          <p class="old-price">499.000₫</p>
           <p class="price">399.000₫</p>
           <p class="sold">Đã bán: 150</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -189,11 +252,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/ek75.jpg" alt="Bàn phím Dareu EK75">
+        <img src="images/ek75pro.jpg" alt="Bàn phím Dareu EK75 PRO">
         <div class="product-info">
-          <h3>Bàn phím Dareu EK75</h3>
+          <h3>Bàn phím Dareu EK75 PRO</h3>
+          <p class="old-price">1.119.000₫</p>
           <p class="price">559.000₫</p>
           <p class="sold">Đã bán: 95</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -202,11 +267,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek98.jpg" alt="Bàn phím Dareu EK98">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK98</h3>
+          <p class="old-price">999.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 246</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -215,11 +282,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek75proal.jpg" alt="Bàn phím Dareu EK75Pro AL">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru EK75 AL</h3>
+          <p class="old-price">899.000₫</p>
+          <p class="price">499.000₫</p>
+          <p class="sold">Đã bán: 110</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -228,11 +297,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru Ek861</h3>
+          <p class="old-price">1.290.000₫</p>
+          <p class="price">899.000₫</p>
+          <p class="sold">Đã bán: 390</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -241,11 +312,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek104.jpg" alt="Bàn phím Dareu EK104">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK104</h3>
+          <p class="old-price">689.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 132</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -254,11 +327,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek807.jpg" alt="Bàn phím Dareu EK807">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru EK807</h3>
+          <p class="old-price">1.189.000₫</p>
+          <p class="price">879.000₫</p>
+          <p class="sold">Đã bán: 120</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -267,11 +342,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/ek810.jpg" alt="Bàn phím Dareu EK810">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Bàn phím Dareu EK810</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 139</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -280,11 +357,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Dareu EK861</h3>
+          <p class="old-price">3.699.000</p>
+          <p class="price">2.999.000₫</p>
+          <p class="sold">Đã bán: 490</p>
+          <p class="stock out-of-stock">Hết hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -293,11 +372,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/taingheA710.jpg" alt="Tai nghe Dareu A710">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Tai Nghe Daeru A710</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 340</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -306,11 +387,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/LK135.jpg" alt="Bàn phím Dareu LK135">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK135</h3>
+          <p class="old-price">399.000₫</p>
+          <p class="price">199.000₫</p>
+          <p class="sold">Đã bán: 112</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -319,11 +402,13 @@
       </div>
 
       <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+        <img src="images/LK145.jpg" alt="Bàn phím Dareu LK145">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK145</h3>
+          <p class="old-price">279.000₫</p>
+          <p class="price">179.000₫</p>
+          <p class="sold">Đã bán: 56</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button class="buy-now">Mua ngay</button>
             <button class="add-cart">🛒</button>
@@ -504,5 +589,31 @@
   </section>
 
   <script src="script.js"></script>
+  <script>
+  // Kiểm tra xem người dùng đã đăng nhập chưa
+  function checkLogin(action) {
+    const user = localStorage.getItem("loggedInUser");
+    if (!user) {
+      alert("Vui lòng đăng nhập trước khi " + action);
+      window.location.href = "login.html";
+      return false;
+    }
+    return true;
+  }
+
+  // Gắn kiểm tra cho nút Mua Ngay
+  document.querySelectorAll(".buy-now").forEach(button => {
+    button.addEventListener("click", function (e) {
+      if (!checkLogin("mua hàng")) e.preventDefault();
+    });
+  });
+
+  // Gắn kiểm tra cho nút Giỏ Hàng
+  document.querySelectorAll(".add-cart").forEach(button => {
+    button.addEventListener("click", function (e) {
+      if (!checkLogin("thêm vào giỏ hàng")) e.preventDefault();
+    });
+  });
+</script>
 </body>
 </html>

@@ -14,3 +14,40 @@ function changePage(page) {
 }
 
 window.addEventListener("DOMContentLoaded", () => changePage(1));
+
+// === SLIDER ===
+let currentSlide = 0;
+const totalSlides = 6;
+const slider = document.getElementById("slider");
+const slideInterval = 4000;
+
+function updateSlide() {
+  slider.style.transform = "translateX(" + (-currentSlide * 100) + "%)";
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateSlide();
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateSlide();
+}
+
+setInterval(nextSlide, slideInterval);
+function isLoggedIn() {
+  return localStorage.getItem('loggedIn') === 'true';
+}
+
+function requireLogin(e) {
+  if (!isLoggedIn()) {
+    e.preventDefault();
+    alert("Vui lòng đăng nhập để sử dụng chức năng này.");
+  }
+}
+
+function showLogin() {
+  alert("Hiện trang đăng nhập.");
+}
+

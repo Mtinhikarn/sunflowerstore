@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký</title>
+</head>
+<body>
+  <h2>Đăng ký tài khoản</h2>
+  <form id="register-form">
+    <input type="text" name="name" placeholder="Họ tên" required><br>
+    <input type="tel" name="phone" placeholder="Số điện thoại" required><br>
+    <input type="text" name="address" placeholder="Địa chỉ" required><br>
+    <input type="date" name="dob" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Mật khẩu" required><br>
+    <button type="submit">Đăng ký</button>
+  </form>
+
+  <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
+
+  <script>
+    document.getElementById("register-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const user = {
+        name: e.target.name.value,
+        phone: e.target.phone.value,
+        address: e.target.address.value,
+        dob: e.target.dob.value,
+        email: e.target.email.value,
+        password: e.target.password.value
+      };
+
+      // Lưu vào localStorage (theo email làm key)
+      localStorage.setItem(user.email, JSON.stringify(user));
+      alert("Đăng ký thành công! Vui lòng đăng nhập.");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>
