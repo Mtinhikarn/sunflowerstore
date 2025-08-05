@@ -222,6 +222,7 @@ header {
   z-index: 100;
 }
 
+
 .old-price {
   text-decoration: line-through;
   color: #999;
@@ -294,33 +295,13 @@ header {
   margin-left: 6px;
 }
 
-.form-container {
-  width: 400px;
-  margin: 60px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  color: black;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-
-.form-container h2 {
-  text-align: center;
-}
-
-.form-container input, .form-container button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.form-container button {
-  background-color: #fa5304;
-  color: white;
+/* Icon giỏ hàng */
+.add-cart {
+  font-size: 16px;
+  background: none;
   border: none;
   cursor: pointer;
 }
-
 
 
 

@@ -43,13 +43,19 @@ function isLoggedIn() {
 function requireLogin(e) {
   if (!isLoggedIn()) {
     e.preventDefault();
-    alert("Vui lòng đăng nhập để sử dụng chức năng này.");
-    window.location.href = "login.html";
+    const confirmLogin = confirm("Bạn cần đăng nhập để sử dụng chức năng này. Chuyển đến trang đăng nhập?");
+    if (confirmLogin) {
+      window.location.href = "dangnhap.html";
+    }
   }
 }
 
+function isLoggedIn() {
+  return localStorage.getItem('loggedIn') === 'true';
+}
+
 function showLogin() {
-  window.location.href = "login.html";
+  window.location.href = "dangnhap.html";
 }
 
 
