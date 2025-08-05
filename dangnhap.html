@@ -2,41 +2,41 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đăng nhập</title>
+  <title>Đăng Nhập</title>
 </head>
 <body>
-  <h2>Đăng nhập</h2>
-  <form id="login-form">
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Mật khẩu" required><br>
+  <h2>Đăng Nhập</h2>
+  <form onsubmit="return login(event)">
+    <input type="text" id="username" placeholder="Tài khoản" required><br><br>
+    <input type="password" id="password" placeholder="Mật khẩu" required><br><br>
     <button type="submit">Đăng nhập</button>
   </form>
-
-  <p>Chưa có tài khoản? <a href="register.html">Đăng ký</a></p>
+  <p id="loginMessage"></p>
+  <p style="text-align:center; color:white; margin-top: 10px;">
+  Chưa có tài khoản? <a href="register.html" style="color: orange;">Đăng ký ngay</a>
+</p>
 
   <script>
-    document.getElementById("login-form").addEventListener("submit", function(e) {
+    function login(e) {
       e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const user = JSON.parse(localStorage.getItem(username));
+      const msg = document.getElementById('loginMessage');
 
-      const email = e.target.email.value;
-      const password = e.target.password.value;
-      const savedUser = localStorage.getItem(email);
-
-      if (!savedUser) {
-        alert("Tài khoản không tồn tại. Vui lòng đăng ký.");
+      if (!user || user.password !== password) {
+        msg.textContent = "Tài khoản hoặc mật khẩu không chính xác!";
+        msg.style.color = "red";
         return;
       }
 
-      const user = JSON.parse(savedUser);
-      if (user.password !== password) {
-        alert("Mật khẩu không đúng.");
-        return;
-      }
-
-      localStorage.setItem("loggedInUser", email); // Lưu trạng thái đăng nhập
-      alert("Đăng nhập thành công!");
-      window.location.href = "index.html"; // Quay về trang chính
-    });
+      localStorage.setItem("loggedInUser", username);
+      msg.textContent = "Đăng nhập thành công!";
+      msg.style.color = "green";
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 1000);
+    }
   </script>
 </body>
 </html>

@@ -37,19 +37,21 @@ function prevSlide() {
 
 setInterval(nextSlide, slideInterval);
 function isLoggedIn() {
-  return localStorage.getItem('loggedIn') === 'true';
+  return !!localStorage.getItem("loggedInUser");
 }
 
 function requireLogin(e) {
   if (!isLoggedIn()) {
     e.preventDefault();
     alert("Vui lòng đăng nhập để sử dụng chức năng này.");
+    window.location.href = "login.html";
   }
 }
 
 function showLogin() {
-  alert("Hiện trang đăng nhập.");
+  window.location.href = "login.html";
 }
+
 
 const products = [
   "Chuột Dareu EM908",
@@ -81,5 +83,37 @@ function filterSuggestions() {
     };
     suggestionsBox.appendChild(div);
   });
+}
+
+// Mở form đăng nhập khi ấn nút
+function showLogin() {
+  document.getElementById('loginForm').style.display = 'block';
+}
+
+// Xử lý đăng nhập
+function login() {
+  const email = document.getElementById("loginEmail").value;
+  const password = document.getElementById("loginPassword").value;
+  const errorDisplay = document.getElementById("loginError");
+
+  // Lấy danh sách người dùng đã đăng ký từ localStorage
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Tìm người dùng khớp
+  const matchedUser = users.find(user => user.email === email && user.password === password);
+
+  if (matchedUser) {
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+    errorDisplay.textContent = "Đăng nhập thành công!";
+    errorDisplay.style.color = "green";
+    setTimeout(() => {
+      document.getElementById('loginForm').style.display = 'none';
+      location.reload(); // hoặc chuyển trang nếu cần
+    }, 1500);
+  } else {
+    errorDisplay.textContent = "Tài khoản hoặc mật khẩu không đúng!";
+    errorDisplay.style.color = "red";
+  }
 }
 

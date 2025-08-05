@@ -2,40 +2,79 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đăng ký</title>
+  <title>Đăng ký tài khoản</title>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    form {
+      display: inline-block;
+      background: #fff;
+      color: black;
+      padding: 30px;
+      border-radius: 12px;
+      width: 300px;
+    }
+    input {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #fa5304;
+      color: white;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h2>Đăng ký tài khoản</h2>
-  <form id="register-form">
-    <input type="text" name="name" placeholder="Họ tên" required><br>
-    <input type="tel" name="phone" placeholder="Số điện thoại" required><br>
-    <input type="text" name="address" placeholder="Địa chỉ" required><br>
-    <input type="date" name="dob" required><br>
-    <input type="email" name="email" placeholder="Email" required><br>
-    <input type="password" name="password" placeholder="Mật khẩu" required><br>
+  <h2>Đăng ký tài khoản mới</h2>
+  <form onsubmit="registerUser(event)">
+    <input type="text" id="username" placeholder="Tài khoản" required>
+    <input type="password" id="password" placeholder="Mật khẩu" required>
+    <input type="text" id="fullname" placeholder="Họ tên" required>
+    <input type="text" id="phone" placeholder="Số điện thoại" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="text" id="address" placeholder="Địa chỉ" required>
     <button type="submit">Đăng ký</button>
   </form>
 
-  <p>Đã có tài khoản? <a href="login.html">Đăng nhập</a></p>
-
   <script>
-    document.getElementById("register-form").addEventListener("submit", function(e) {
+    function registerUser(e) {
       e.preventDefault();
-
       const user = {
-        name: e.target.name.value,
-        phone: e.target.phone.value,
-        address: e.target.address.value,
-        dob: e.target.dob.value,
-        email: e.target.email.value,
-        password: e.target.password.value
+        username: document.getElementById("username").value,
+        password: document.getElementById("password").value,
+        fullname: document.getElementById("fullname").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        address: document.getElementById("address").value
       };
 
-      // Lưu vào localStorage (theo email làm key)
-      localStorage.setItem(user.email, JSON.stringify(user));
-      alert("Đăng ký thành công! Vui lòng đăng nhập.");
-      window.location.href = "login.html";
-    });
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      const exists = users.some(u => u.username === user.username);
+      if (exists) {
+        alert("Tài khoản đã tồn tại, vui lòng chọn tài khoản khác.");
+        return;
+      }
+
+      users.push(user);
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Đăng ký thành công! Bây giờ bạn có thể đăng nhập.");
+      window.location.href = "index.html"; // chuyển về trang chính
+    }
   </script>
 </body>
 </html>

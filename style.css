@@ -180,6 +180,48 @@ header {
   right: 10px;
 }
 
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.search-bar {
+  display: inline-block;
+  background: white;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 6px;
+  font-size: 14px;
+  width: 200px;
+}
+
+.search-bar button {
+  border: none;
+  background: #fa5304;
+  color: white;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.suggestions-box {
+  background: white;
+  color: black;
+  position: absolute;
+  width: 220px;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  z-index: 100;
+}
+
 .old-price {
   text-decoration: line-through;
   color: #999;
@@ -252,13 +294,33 @@ header {
   margin-left: 6px;
 }
 
-/* Icon giỏ hàng */
-.add-cart {
-  font-size: 16px;
-  background: none;
+.form-container {
+  width: 400px;
+  margin: 60px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  color: black;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.form-container h2 {
+  text-align: center;
+}
+
+.form-container input, .form-container button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.form-container button {
+  background-color: #fa5304;
+  color: white;
   border: none;
   cursor: pointer;
 }
+
 
 
 

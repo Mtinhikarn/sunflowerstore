@@ -1,5 +1,0 @@
-Tạo 1 trang quảng cáo gồm có 6 ảnh thay phiên trượt từ phải sang trái và khi đến ảnh
-cuối thì sẽ tự quay về trang 1 tạo thành 1 vòng lặp và có thể ấn 2 nút 2 bên để chuyển
-ảnh trang trái hoặc phải
-
-Tạo phân loại sản phẩm
