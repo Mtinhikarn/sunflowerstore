@@ -23,8 +23,6 @@
   <header>
   <table width="100%" style="background-color: #fa5304; padding: 10px;">
     <tr>
-      <!-- Logo giỏ hàng -->
-      <a href="giohang.html" class="cart-icon">🛒 <span>Giỏ hàng</span></a>
       
       <!-- Cột 1: Logo bên trái -->
       <td width="20%" align="left" style="padding-left: 20px;">
@@ -41,10 +39,15 @@
       </td>
 
       <!-- Cột 3: Các liên kết bên phải -->
-      <td width="30%" align="right" style="padding-right: 20px;">
-        <a href="lienhe.html" onclick="requireLogin(event)" style="color: white; margin-right: 10px;">LIÊN HỆ</a>
-        <a href="dangnhap.html" style="color: white;">ĐĂNG NHẬP</a>
+      <td width="30%" align="right"class="right-links">
+        <div class="header-links">
+          <a href="#spnb" style="color: white; margin-right: 10px;">SẢN PHẨM</a>
+          <a href="lienhe.html" onclick="requireLogin(event)" style="color: white; margin-right: 10px;">LIÊN HỆ</a>
+          <a href="dangnhap.html" style="color: white;">ĐĂNG NHẬP</a>
+          <a href="giohang.html" class="cart-icon">🛒 <span>Giỏ hàng</span></a>
+        </div>
       </td>
+      
     </tr>
   </table>
 </header>
@@ -65,7 +68,7 @@
 </div>
 
   <section>
-    <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
+    <h2 class="section-title" id="spnb">Sản Phẩm Nổi Bật</h2>
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
       <div class="product-box" onclick="window.location.href='chitiet.html'">
@@ -627,6 +630,15 @@
       <button onclick="changePage(3)">3</button>
     </div>
   </section>
+  <section></section>
+  <footer>
+    <p>Copyright 2025 𝘚𝘶𝘯𝘍𝘭𝘰𝘸𝘦𝘳𝘚𝘵𝘰𝘳𝘦</p>
+  </footer>
+  <button class="back-to-top" onclick="scrollToTop()">⬆️</button>
+</body>
+
+
+
 
   <script src="script.js"></script>
   <script>
@@ -656,7 +668,7 @@
   });
 </script>
 
-<script>(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="YSUTQi1HVAdtZ94deuOwC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script></script> 
-</body>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="YSUTQi1HVAdtZ94deuOwC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
 </html>

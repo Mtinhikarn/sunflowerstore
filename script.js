@@ -136,12 +136,7 @@ function login() {
   }
 }
 
-const crypto = require('crypto');
 
-const secret = 'YSUTQi1HVAdtZ94deuOwC'; // Your verification secret key
-const userId = current_user.id // A string UUID to identify your user
-
-const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
 
 function filterSuggestions() {
   const input = document.getElementById("searchInput").value.toLowerCase();
@@ -164,3 +159,17 @@ function addToCart(id) {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Đã thêm sản phẩm vào giỏ hàng.");
 }
+const backToTopButton = document.querySelector('.back-to-top');
+window.onscroll = function() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    backToTopButton.style.display = "block";
+  } else {
+    backToTopButton.style.display = "none";
+  }
+};
+backToTopButton.onclick = function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+};

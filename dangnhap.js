@@ -13,7 +13,7 @@ function loginUser(event) {
     document.getElementById("login-message").textContent = "Đăng nhập thành công!";
     setTimeout(() => {
     window.location.href = "index.html";
-    }, 1500);
+    }, 10000);
   } else {
     document.getElementById("login-message").textContent = "Tài khoản hoặc mật khẩu không chính xác!";
   }

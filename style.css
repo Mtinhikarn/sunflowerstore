@@ -323,6 +323,43 @@ header {
   margin-left: 5px;
 }
 
+/* === Căn đều 3 liên kết trong header === */
+.header-links {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  text-align: center;
+}
 
+.header-links a {
+  display: table-cell;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0 5px;
+}
 
+/* Tùy chỉnh thêm cho giỏ hàng */
+.cart-icon span {
+  margin-left: 4px;
+}
 
+#back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fa5304;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+  transition: background-color 0,3, transform 0,3;
+   /* Ban đầu không hiển thị */
+}
+#back-to-top:hover {
+  background-color: #e04d00;
+  transform: scale(1.1);
+}
