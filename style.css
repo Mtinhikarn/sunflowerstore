@@ -102,7 +102,8 @@ header {
   font-size: 18px;
   margin-left: 8px;
   background: none;
-  border: none;
+  border: 1px solid #1a1a1a;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -141,7 +142,7 @@ header {
 /* ==== SLIDER QUẢNG CÁO ==== */
 .slider-container {
   width: 100%;
-  max-width: 1520px;
+  max-width: 1400px;
   margin: 40px auto;
   position: relative;
   overflow: hidden;
@@ -193,6 +194,7 @@ header {
   background: white;
   border-radius: 6px;
   padding: 4px;
+  position: relative; 
 }
 
 .search-bar input {
@@ -212,15 +214,29 @@ header {
 }
 
 .suggestions-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
   background: white;
   color: black;
-  position: absolute;
-  width: 220px;
+  width: 100%;
   max-height: 150px;
   overflow-y: auto;
   border: 1px solid #ccc;
+  border-radius: 4px;
   z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
+.suggestions-box div {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.suggestions-box div:hover {
+  background-color: #f2f2f2;
+}
+
 
 
 .old-price {
@@ -295,13 +311,18 @@ header {
   margin-left: 6px;
 }
 
-/* Icon giỏ hàng */
-.add-cart {
+.cart-icon {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
   font-size: 16px;
-  background: none;
-  border: none;
-  cursor: pointer;
+  margin-right: 20px;
 }
+
+.cart-icon span {
+  margin-left: 5px;
+}
+
 
 
 

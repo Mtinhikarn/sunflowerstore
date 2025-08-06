@@ -40,19 +40,32 @@ function isLoggedIn() {
   return !!localStorage.getItem("loggedInUser");
 }
 
+function isLoggedIn() {
+  return localStorage.getItem("loggedIn") === "true";
+}
+
+function requireLoginForAction(actionFunc) {
+  if (!isLoggedIn()) {
+    const confirmLogin = confirm("Bạn cần đăng nhập để thực hiện thao tác này. Đăng nhập ngay?");
+    if (confirmLogin) {
+      window.location.href = "dangnhap.html";
+    }
+    return false;
+  }
+  actionFunc(); // thực hiện hành động nếu đã đăng nhập
+}
+
+
 function requireLogin(e) {
   if (!isLoggedIn()) {
     e.preventDefault();
-    const confirmLogin = confirm("Bạn cần đăng nhập để sử dụng chức năng này. Chuyển đến trang đăng nhập?");
+    const confirmLogin = confirm("Bạn cần đăng nhập để sử dụng chức năng này.\nBạn có muốn đăng nhập ngay?");
     if (confirmLogin) {
-      window.location.href = "dangnhap.html";
+      window.location.href = 'dangnhap.html';
     }
   }
 }
 
-function isLoggedIn() {
-  return localStorage.getItem('loggedIn') === 'true';
-}
 
 function showLogin() {
   window.location.href = "dangnhap.html";
@@ -123,3 +136,31 @@ function login() {
   }
 }
 
+const crypto = require('crypto');
+
+const secret = 'YSUTQi1HVAdtZ94deuOwC'; // Your verification secret key
+const userId = current_user.id // A string UUID to identify your user
+
+const hash = crypto.createHmac('sha256', secret).update(userId).digest('hex');
+
+function filterSuggestions() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const suggestionsBox = document.getElementById("suggestions");
+  suggestionsBox.innerHTML = "";
+
+  const matches = products.filter(p => p.name.toLowerCase().includes(input));
+  matches.forEach(match => {
+    const div = document.createElement("div");
+    div.textContent = match.name;
+    div.onclick = () => {
+      window.location.href = `sanpham.html?id=${match.id}`;  // Chuyển trang
+    };
+    suggestionsBox.appendChild(div);
+  });
+}
+function addToCart(id) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(id);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Đã thêm sản phẩm vào giỏ hàng.");
+}

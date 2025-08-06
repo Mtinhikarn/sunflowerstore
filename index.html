@@ -15,17 +15,24 @@
   <button onclick="login()" style="padding:8px 16px;">Đăng nhập</button>
   <p id="loginError" style="color:red;"></p>
   <p>Bạn chưa có tài khoản? <a href="dangky.html">Đăng ký</a></p>
-</div>
+</div> <!--di chuyern vao body-->
 
 <body>
-  <div class="navbar">
-  <table width="100%" style="background-color: #000; padding: 10px;">
-    <tr>
-      <!-- Cột trái trống để căn giữa thanh tìm kiếm -->
-      <td width="30%"></td>
 
-      <!-- Ô tìm kiếm căn giữa -->
-      <td width="40%" align="center">
+
+  <header>
+  <table width="100%" style="background-color: #fa5304; padding: 10px;">
+    <tr>
+      <!-- Logo giỏ hàng -->
+      <a href="giohang.html" class="cart-icon">🛒 <span>Giỏ hàng</span></a>
+      
+      <!-- Cột 1: Logo bên trái -->
+      <td width="20%" align="left" style="padding-left: 20px;">
+        <h1 style="margin: 0; font-size: 24px;">𝘚𝘶𝘯𝘍𝘭𝘰𝘸𝘦𝘳𝘚𝘵𝘰𝘳𝘦</h1>
+      </td>
+
+      <!-- Cột 2: Thanh tìm kiếm ở giữa -->
+      <td width="50%" align="center">
         <div class="search-bar">
           <input type="text" id="searchInput" placeholder="Tìm kiếm sản phẩm..." oninput="filterSuggestions()">
           <button onclick="filterSuggestions()">🔍</button>
@@ -33,19 +40,15 @@
         </div>
       </td>
 
-      <!-- Cột phải chứa các liên kết -->
-      <td width="30%" align="right">
-        <a href="#" onclick="requireLogin(event)">LIÊN HỆ</a>
-        <a href="#" onclick="requireLogin(event)">HỖ TRỢ</a>
-        <a href="#" onclick="showLogin()">ĐĂNG NHẬP</a>
+      <!-- Cột 3: Các liên kết bên phải -->
+      <td width="30%" align="right" style="padding-right: 20px;">
+        <a href="lienhe.html" onclick="requireLogin(event)" style="color: white; margin-right: 10px;">LIÊN HỆ</a>
+        <a href="dangnhap.html" style="color: white;">ĐĂNG NHẬP</a>
       </td>
     </tr>
   </table>
-</div>
+</header>
 
-  <header>
-    <h1>SunFlowerStore</h1>
-  </header>
 
   <div class="slider-container">
   <div class="slider-wrapper" id="slider">
@@ -65,7 +68,7 @@
     <h2 class="section-title">Sản Phẩm Nổi Bật</h2>
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/chuot1.jpg" alt="Chuột Dareu EM908">
         <div class="product-info">
           <h3>Chuột Dareu EM908</h3>
@@ -80,7 +83,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek75pro.jpg" alt="Bàn phím Dareu EK75 PRO">
         <div class="product-info">
           <h3>Bàn phím Dareu EK75 PRO</h3>
@@ -95,7 +98,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek98.jpg" alt="Bàn phím Dareu EK98">
         <div class="product-info">
           <h3>Bàn phím EK98</h3>
@@ -110,7 +113,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek75proal.jpg" alt="Bàn phím Dareu EK75Pro AL">
         <div class="product-info">
           <h3>Bàn Phím Daeru EK75 AL</h3>
@@ -125,7 +128,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
           <h3>Bàn phím Daeru Ek861</h3>
@@ -140,7 +143,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek104.jpg" alt="Bàn phím Dareu EK104">
         <div class="product-info">
           <h3>Bàn phím EK104</h3>
@@ -155,7 +158,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek807.jpg" alt="Bàn phím Dareu EK807">
         <div class="product-info">
           <h3>Bàn phím Daeru EK807</h3>
@@ -170,7 +173,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek810.jpg" alt="Bàn phím Dareu EK810">
         <div class="product-info">
           <h3>Bàn phím Dareu EK810</h3>
@@ -185,7 +188,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
           <h3>Bàn phím Dareu EK861</h3>
@@ -195,12 +198,12 @@
           <p class="stock out-of-stock">Hết hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
-            <button onclickclass="add-cart">🛒</button>
+            <button onclick class="add-cart">🛒</button>
           </div>
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/taingheA710.jpg" alt="Tai nghe Dareu A710">
         <div class="product-info">
           <h3>Tai Nghe Daeru A710</h3>
@@ -215,7 +218,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/LK135.jpg" alt="Bàn phím Dareu LK135">
         <div class="product-info">
           <h3>Bàn Phím Daeru LK135</h3>
@@ -230,7 +233,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/LK145.jpg" alt="Bàn phím Dareu LK145">
         <div class="product-info">
           <h3>Bàn Phím Daeru LK145</h3>
@@ -249,7 +252,7 @@
     </div>
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/chuot1.jpg" alt="Chuột Dareu EM908">
         <div class="product-info">
           <h3>Chuột Dareu EM908</h3>
@@ -264,7 +267,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek75pro.jpg" alt="Bàn phím Dareu EK75 PRO">
         <div class="product-info">
           <h3>Bàn phím Dareu EK75 PRO</h3>
@@ -279,7 +282,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek98.jpg" alt="Bàn phím Dareu EK98">
         <div class="product-info">
           <h3>Bàn phím EK98</h3>
@@ -294,7 +297,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek75proal.jpg" alt="Bàn phím Dareu EK75Pro AL">
         <div class="product-info">
           <h3>Bàn Phím Daeru EK75 AL</h3>
@@ -309,7 +312,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
           <h3>Bàn phím Daeru Ek861</h3>
@@ -324,7 +327,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek104.jpg" alt="Bàn phím Dareu EK104">
         <div class="product-info">
           <h3>Bàn phím EK104</h3>
@@ -339,7 +342,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek807.jpg" alt="Bàn phím Dareu EK807">
         <div class="product-info">
           <h3>Bàn phím Daeru EK807</h3>
@@ -354,7 +357,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/ek810.jpg" alt="Bàn phím Dareu EK810">
         <div class="product-info">
           <h3>Bàn phím Dareu EK810</h3>
@@ -369,7 +372,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
           <h3>Bàn phím Dareu EK861</h3>
@@ -384,7 +387,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/taingheA710.jpg" alt="Tai nghe Dareu A710">
         <div class="product-info">
           <h3>Tai Nghe Daeru A710</h3>
@@ -399,7 +402,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/LK135.jpg" alt="Bàn phím Dareu LK135">
         <div class="product-info">
           <h3>Bàn Phím Daeru LK135</h3>
@@ -414,7 +417,7 @@
         </div>
       </div>
 
-      <div class="product-box">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
         <img src="images/LK145.jpg" alt="Bàn phím Dareu LK145">
         <div class="product-info">
           <h3>Bàn Phím Daeru LK145</h3>
@@ -434,12 +437,14 @@
 
     <div class="product-grid" id="product-grid">
       <!-- 12 sản phẩm demo -->
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/chuot1.jpg" alt="Chuột Dareu EM908">
         <div class="product-info">
           <h3>Chuột Dareu EM908</h3>
+          <p class="old-price">499.000₫</p>
           <p class="price">399.000₫</p>
           <p class="sold">Đã bán: 150</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -447,12 +452,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/ek75.jpg" alt="Bàn phím Dareu EK75">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek75pro.jpg" alt="Bàn phím Dareu EK75 PRO">
         <div class="product-info">
-          <h3>Bàn phím Dareu EK75</h3>
+          <h3>Bàn phím Dareu EK75 PRO</h3>
+          <p class="old-price">1.119.000₫</p>
           <p class="price">559.000₫</p>
           <p class="sold">Đã bán: 95</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -460,12 +467,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek98.jpg" alt="Bàn phím Dareu EK98">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK98</h3>
+          <p class="old-price">999.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 246</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -473,12 +482,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek75proal.jpg" alt="Bàn phím Dareu EK75Pro AL">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru EK75 AL</h3>
+          <p class="old-price">899.000₫</p>
+          <p class="price">499.000₫</p>
+          <p class="sold">Đã bán: 110</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -486,12 +497,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru Ek861</h3>
+          <p class="old-price">1.290.000₫</p>
+          <p class="price">899.000₫</p>
+          <p class="sold">Đã bán: 390</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -499,12 +512,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek104.jpg" alt="Bàn phím Dareu EK104">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím EK104</h3>
+          <p class="old-price">689.000₫</p>
+          <p class="price">599.000₫</p>
+          <p class="sold">Đã bán: 132</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -512,12 +527,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek807.jpg" alt="Bàn phím Dareu EK807">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Daeru EK807</h3>
+          <p class="old-price">1.189.000₫</p>
+          <p class="price">879.000₫</p>
+          <p class="sold">Đã bán: 120</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -525,12 +542,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/ek810.jpg" alt="Bàn phím Dareu EK810">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Bàn phím Dareu EK810</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 139</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -538,12 +557,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/EK861.jpg" alt="Bàn phím Dareu EK861">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn phím Dareu EK861</h3>
+          <p class="old-price">3.699.000</p>
+          <p class="price">2.999.000₫</p>
+          <p class="sold">Đã bán: 490</p>
+          <p class="stock out-of-stock">Hết hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -551,12 +572,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/taingheA710.jpg" alt="Tai nghe Dareu A710">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
+          <h3>Tai Nghe Daeru A710</h3>
+          <p class="old-price">1.189.000₫</p>
           <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <p class="sold">Đã bán: 340</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -564,12 +587,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/LK135.jpg" alt="Bàn phím Dareu LK135">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK135</h3>
+          <p class="old-price">399.000₫</p>
+          <p class="price">199.000₫</p>
+          <p class="sold">Đã bán: 112</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -577,12 +602,14 @@
         </div>
       </div>
 
-      <div class="product-box">
-        <img src="images/em908.jpg" alt="Chuột Dareu EM908">
+      <div class="product-box" onclick="window.location.href='chitiet.html'">
+        <img src="images/LK145.jpg" alt="Bàn phím Dareu LK145">
         <div class="product-info">
-          <h3>Chuột Dareu EM908</h3>
-          <p class="price">399.000₫</p>
-          <p class="sold">Đã bán: 150</p>
+          <h3>Bàn Phím Daeru LK145</h3>
+          <p class="old-price">279.000₫</p>
+          <p class="price">179.000₫</p>
+          <p class="sold">Đã bán: 56</p>
+          <p class="stock in-stock">Còn hàng</p>
           <div class="product-buttons">
             <button onclick class="buy-now">Mua ngay</button>
             <button onclick class="add-cart">🛒</button>
@@ -628,5 +655,8 @@
     });
   });
 </script>
+
+<script>(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="YSUTQi1HVAdtZ94deuOwC";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script></script> 
 </body>
 </html>

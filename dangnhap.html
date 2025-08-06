@@ -3,43 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Đăng Nhập</title>
+  <link rel="stylesheet" href="dangky.css">
 </head>
 <body>
   <h2>Đăng Nhập</h2>
   <form onsubmit="return login(event)">
-    <input type="text" id="username" placeholder="Tài khoản" required><br><br>
-    <input type="password" id="password" placeholder="Mật khẩu" required><br><br>
+    <input type="text" id="username" placeholder="Tài khoản" required>
+    <input type="password" id="password" placeholder="Mật khẩu" required><hr>
+    <p id="login-message"></p>
     <button type="submit">Đăng nhập</button>
+    <button type="button" onclick="cancelLogin()">Hủy</button>
   </form>
   <p id="loginMessage"></p>
   <p style="text-align:center; color:white; margin-top: 10px;">
   Chưa có tài khoản? <a href="dangky.html" style="color: orange;">Đăng ký ngay</a>
 </p>
 
-  <script>
-    function login(e) {
-      e.preventDefault();
-      const username = document.getElementById('username').value;
-      const password = document.getElementById('password').value;
-      const user = JSON.parse(localStorage.getItem(username));
-      const msg = document.getElementById('loginMessage');
-
-      if (!user || user.password !== password) {
-        msg.textContent = "Tài khoản hoặc mật khẩu không chính xác!";
-        msg.style.color = "red";
-        return;
-      }
-
-      localStorage.setItem("loggedInUser", username);
-      msg.textContent = "Đăng nhập thành công!";
-      msg.style.color = "green";
-      setTimeout(() => {
-        window.location.href = "index.html";
-      }, 1000);
-    }
-
-    
-  </script>
   <script src="dangnhap.js"></script>
+  <script>
+    function cancelLogin() {
+      if (confirm("Bạn có muốn quay lại trang chính không?")) {
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
 </body>
 </html>
