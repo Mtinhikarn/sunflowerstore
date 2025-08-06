@@ -379,17 +379,48 @@ header {
   background-color: #1a1a1a;
   padding:20px 0;
 }
+
 .news-item {
+  background: #636363;
+  border-radius: 8px;
+  padding: 15px;
   margin: 10px 0;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 8px;
-  transition: transform 0.2s;
-  color:black;
+  transition: background 0.3s ease;
 }
-.tintuc img {
-  width: 20px;
-  height: 200px;
-  object-fit: cover;
+
+.news-item p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 8px;;
+}
+
+.news-item img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 10px 0;
   border-radius: 8px;
+}
+
+.news-item:hover {
+  background: #4b4b4b;
+}
+
+.news-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+}
+
+.news-item h3 a {
+  color: #fa5304;
+  text-decoration: none;
+}
+
+.news-item h3 a:hover {
+  text-decoration: underline;
+}
+
+.news-date {
+  font-size: 0.9rem;
+  color: #777;
 }
