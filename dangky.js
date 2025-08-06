@@ -8,16 +8,7 @@ function handleRegister(event) {
   const email = document.getElementById("email").value;
   const address = document.getElementById("address").value;
 
-  const newUser = {
-    username,
-    password,
-    name,
-    phone,
-    email,
-    address,
-  };
-
-  // Lấy danh sách người dùng cũ từ localStorage
+  // Lấy danh sách người dùng hiện có từ localStorage
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
   // Kiểm tra trùng tài khoản
@@ -27,9 +18,22 @@ function handleRegister(event) {
     return;
   }
 
-  // Thêm người dùng mới và lưu lại
+  // Thêm người dùng mới nếu không trùng
+  const newUser = {
+    username,
+    password,
+    name,
+    phone,
+    email,
+    address,
+  };
+
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
+  localStorage.setItem("loggedIn", "true");
+  localStorage.setItem("loggedInUser", username);
+
+  
 
   alert("Đăng ký thành công!");
   window.location.href = "dangnhap.html";

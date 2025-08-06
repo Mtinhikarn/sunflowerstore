@@ -123,7 +123,7 @@ function login() {
 
   if (matchedUser) {
     localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+    localStorage.setItem("currentUser",  JSON.stringify(matchedUser));
     errorDisplay.textContent = "Đăng nhập thành công!";
     errorDisplay.style.color = "green";
     setTimeout(() => {
@@ -173,3 +173,28 @@ backToTopButton.onclick = function() {
     behavior: 'smooth'
   });
 };
+
+  window.onload = function () {
+    const loggedIn = localStorage.getItem("loggedIn");
+    const username = localStorage.getItem("loggedInUser");
+
+    const loginLink = document.getElementById("login-link");
+    const logoutBtn = document.getElementById("logout-btn");
+    const userInfo = document.getElementById("user-info");
+
+    if (loggedIn === "true" && username) {
+      loginLink.style.display = "none";
+      logoutBtn.style.display = "inline";
+      userInfo.textContent = "👤 " + username;
+    } else {
+      loginLink.style.display = "inline";
+      logoutBtn.style.display = "none";
+      userInfo.textContent = "";
+    }
+  };
+
+  function logout() {
+    localStorage.removeItem("loggedIn");
+    localStorage.removeItem("loggedInUser");
+    window.location.reload(); // Reload lại để cập nhật giao diện
+  }
