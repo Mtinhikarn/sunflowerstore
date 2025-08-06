@@ -637,23 +637,23 @@
     <div class="news-grid">
       <div class="news-item">
         <img src="assets/tintuc/anh3.jpg" alt="Tin Tức 1">
-       <h3><a href="https://thinkpro.vn/noi-dung/06-yeu-to-can-can-nhac-khi-chon-mua-ghe-cong-thai-hoc">SunFlowerStore ra mắt sản phẩm mới</a></h3>
-       <p>Chúng tôi tự hào giới thiệu bàn phím Dareu EK87 với thiết kế mới...</p>
+       <h3><a href="https://thinkpro.vn/noi-dung/06-yeu-to-can-can-nhac-khi-chon-mua-ghe-cong-thai-hoc">Cách chọn mua ghế công thái học phù hợp mọi dáng người</a></h3>
+       <p>Đau lưng, mỏi cổ, tê bì chân tay,... là những triệu chứng thường gặp khi ngồi làm việc sai tư thế kéo dài. Mặc dù ghế công thái học được xem là giải pháp hữu hiệu, nhưng việc lựa chọn sai ghế cũng có thể gây ra những tác động tiêu cực đến sức khỏe. Bài viết này sẽ hướng dẫn bạn chi tiết cách chọn mua ghế công thái học phù hợp, giúp bạn đầu tư đúng đắn cho sức khỏe và nâng cao hiệu suất làm việc.</p>
        <span class="news-date">Ngày đăng: 05/08/2025</span>
       </div>
 
 
       <div class="news-item">
         <img src="assets/tintuc/anh2.jpg" alt="Tin Tức 2">
-        <h3><a href="https://thinkpro.vn/noi-dung/cach-tat-ung-dung-chay-ngam-tren-laptop-win-11-nhanh-chong" target="_blank">Tiêu đề tin tức</a></h3>
-        <p>Tóm tắt ngắn gọn nội dung tin — ví dụ 1‑2 dòng.</p>
+        <h3><a href="https://thinkpro.vn/noi-dung/cach-tat-ung-dung-chay-ngam-tren-laptop-win-11-nhanh-chong" target="_blank">Cách tắt ứng dụng chạy ngầm trên laptop Win 11 nhanh chóng</a></h3>
+        <p>Laptop chạy chậm, giật lag và nhanh hết pin có thể do nhiều ứng dụng chạy ngầm mà bạn không hay biết. Bài viết này sẽ hướng dẫn bạn cách tắt các ứng dụng này, giúp tối ưu hóa hiệu suất máy tính và kéo dài thời lượng pin. Bạn sẽ có một chiếc laptop hoạt động mượt mà hơn, nhanh hơn và tiết kiệm điện năng hơn.</p>
         <span class="news-date">Ngày đăng: 01/08/2025</span>
       </div>
 
       <div class="news-item">
         <img src="assets/tintuc/anh4.jpg" alt="Tin Tức 3">
-        <h3><a href="https://thinkpro.vn/noi-dung/cach-chinh-phim-fn-tren-laptop-battat-sua-loi-tuy-chinh" target="_blank">Tiêu đề tin tức</a></h3>
-        <p>Tóm tắt ngắn gọn nội dung tin — ví dụ 1‑2 dòng.</p>
+        <h3><a href="https://thinkpro.vn/noi-dung/cach-chinh-phim-fn-tren-laptop-battat-sua-loi-tuy-chinh" target="_blank">Cách chỉnh phím Fn trên laptop - Bật/tắt, sửa lỗi, tùy chỉnh</a></h3>
+        <p>Bạn gặp khó khăn với phím Fn trên laptop? Bài viết này sẽ giúp bạn hiểu rõ hơn về phím Fn, cách hoạt động, và cách khắc phục các vấn đề thường gặp như phím Fn không hoạt động, bị ngược, hoặc bạn không biết cách tùy chỉnh. Tìm hiểu về phím Fn sẽ giúp bạn sử dụng laptop hiệu quả hơn, tiết kiệm thời gian, và nâng cao trải nghiệm sử dụng trong công việc, học tập và giải trí hàng ngày.</p>
         <span class="news-date">Ngày đăng: 01/08/2025</span>
       </div>
     </div>
@@ -708,6 +708,22 @@
       if (!checkLogin("thêm vào giỏ hàng")) e.preventDefault();
     });
   });
+</script>
+<script>
+  window.onload = function () {
+  const loginLink = document.getElementById("loginLink");
+  const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+
+  if (isLoggedIn && user) {
+    loginLink.textContent = user.username;
+    loginLink.href = "#";
+    loginLink.onclick = function () {
+      alert("Bạn đã đăng nhập với tài khoản: " + user.username);
+    };
+  }
+};
+
 </script>
 
 <script>

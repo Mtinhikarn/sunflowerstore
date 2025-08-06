@@ -1,15 +1,24 @@
-function registerUser(event) {
+
+function handleRegister(event) {
   event.preventDefault();
 
-  const user = {
-    fullname: document.getElementById("fullname").value,
-    phone: document.getElementById("phone").value,
-    email: document.getElementById("email").value,
-    address: document.getElementById("address").value,
-    username: document.getElementById("username").value,
-    password: document.getElementById("password").value
-  };
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const email = document.getElementById("email").value;
+  const address = document.getElementById("address").value;
 
-  localStorage.setItem("user", JSON.stringify(user));
-  document.getElementById("register-message").textContent = "Đăng ký thành công! Hãy đăng nhập.";
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const exists = users.some(u => u.username === username);
+  if (exists) {
+    alert("Tài khoản đã tồn tại!");
+    return;
+  }
+
+  users.push({ username, password, name, phone, email, address });
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Đăng ký thành công! Vui lòng đăng nhập.");
+  window.location.href = "dangnhap.html";
 }
