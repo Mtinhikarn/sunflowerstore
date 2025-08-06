@@ -176,7 +176,7 @@ backToTopButton.onclick = function() {
 
   window.onload = function () {
     const loggedIn = localStorage.getItem("loggedIn");
-    const username = localStorage.getItem("loggedInUser");
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
     const loginLink = document.getElementById("login-link");
     const logoutBtn = document.getElementById("logout-btn");
@@ -185,7 +185,8 @@ backToTopButton.onclick = function() {
     if (loggedIn === "true" && username) {
       loginLink.style.display = "none";
       logoutBtn.style.display = "inline";
-      userInfo.textContent = "👤 " + username;
+      userInfo.textContent = "👤 " + user.username;
+
     } else {
       loginLink.style.display = "inline";
       logoutBtn.style.display = "none";

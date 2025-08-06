@@ -325,20 +325,19 @@ header {
 
 /* === Căn đều 3 liên kết trong header === */
 .header-links {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  text-align: center;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 10px;
 }
-
 .header-links a {
-  display: table-cell;
+  display: inline-block;
   color: white;
   text-decoration: none;
   font-weight: bold;
   font-size: 14px;
-  padding: 0 5px;
+  margin-left: 10px;
 }
+
 
 /* Tùy chỉnh thêm cho giỏ hàng */
 .cart-icon span {
@@ -436,7 +435,7 @@ header {
   color: #777;
 }
 
-.thongtinlienhe ul{
+.thongtinlienhe {
   background: #333;
   padding: 20px;
   border-radius: 12px;
