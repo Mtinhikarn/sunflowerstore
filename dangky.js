@@ -1,6 +1,5 @@
-
 function handleRegister(event) {
-  event.preventDefault();
+  event.preventDefault(); // Ngăn form reload trang
 
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
@@ -9,16 +8,29 @@ function handleRegister(event) {
   const email = document.getElementById("email").value;
   const address = document.getElementById("address").value;
 
+  const newUser = {
+    username,
+    password,
+    name,
+    phone,
+    email,
+    address,
+  };
+
+  // Lấy danh sách người dùng cũ từ localStorage
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  const exists = users.some(u => u.username === username);
-  if (exists) {
-    alert("Tài khoản đã tồn tại!");
+  // Kiểm tra trùng tài khoản
+  const isDuplicate = users.some(user => user.username === username);
+  if (isDuplicate) {
+    alert("Tài khoản đã tồn tại. Vui lòng chọn tên khác.");
     return;
   }
 
-  users.push({ username, password, name, phone, email, address });
+  // Thêm người dùng mới và lưu lại
+  users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
-  alert("Đăng ký thành công! Vui lòng đăng nhập.");
+
+  alert("Đăng ký thành công!");
   window.location.href = "dangnhap.html";
 }
