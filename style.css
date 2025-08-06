@@ -435,3 +435,23 @@ header {
   font-size: 0.9rem;
   color: #777;
 }
+
+.thongtinlienhe ul{
+  background: #333;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  color: white;
+  align-items: center;
+  list-style: none;
+  
+}
+.lienhe {
+  display:block;
+  width: 100%; 
+  max-width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
