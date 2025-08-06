@@ -1,19 +1,4 @@
-const products = [
-  {
-    id: "sp1",
-    name: "Chuột Dareu EM908",
-    price: "350000",
-    image: "assets/em908.jpg"
-  },
-  {
-    id: "sp2",
-    name: "Bàn phím Dareu EK87",
-    price: "750000",
-    image: "assets/ek87.jpg"
-  }
-  // Thêm các sản phẩm còn lại tương tự
-];
-
+const products = [ /* danh sách sản phẩm với ID */ ];
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 const container = document.getElementById("cart-items");
 let total = 0;
@@ -26,10 +11,9 @@ if (cart.length === 0) {
     if (product) {
       total += parseFloat(product.price);
       container.innerHTML += `
-        <div class="cart-item">
+        <div>
           <input type="checkbox" name="selectItem" value="${product.id}">
-          <img src="${product.image}" width="80">
-          <span>${product.name} - ${parseInt(product.price).toLocaleString()} VND</span>
+          ${product.name} - ${product.price} VND
           <button onclick="removeItem(${index})">Hủy</button>
         </div>
       `;

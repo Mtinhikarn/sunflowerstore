@@ -175,27 +175,30 @@ backToTopButton.onclick = function() {
 };
 
   window.onload = function () {
-    const loggedIn = localStorage.getItem("loggedIn");
-    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  const loggedIn = localStorage.getItem("loggedIn");
+  const user = JSON.parse(localStorage.getItem("loggedInUser"));
 
-    const loginLink = document.getElementById("login-link");
-    const logoutBtn = document.getElementById("logout-btn");
-    const userInfo = document.getElementById("user-info");
+  const loginLink = document.getElementById("login-link");
+  const logoutBtn = document.getElementById("logout-btn");
+  const userInfo = document.getElementById("user-info");
 
-    if (loggedIn === "true" && username) {
-      loginLink.style.display = "none";
-      logoutBtn.style.display = "inline";
-      userInfo.textContent = "👤 " + user.username;
+  if (loggedIn === "true" && user) {
+    loginLink.style.display = "none";
+    logoutBtn.style.display = "inline";
+    userInfo.textContent = "👤 " + user.username;
+  } else {
+    loginLink.style.display = "inline";
+    logoutBtn.style.display = "none";
+    userInfo.textContent = "";
+  }
+};
 
-    } else {
-      loginLink.style.display = "inline";
-      logoutBtn.style.display = "none";
-      userInfo.textContent = "";
-    }
-  };
 
   function logout() {
     localStorage.removeItem("loggedIn");
     localStorage.removeItem("loggedInUser");
     window.location.reload(); // Reload lại để cập nhật giao diện
   }
+function quayLaiTrangChu() {
+  window.location.href = "index.html";
+}
