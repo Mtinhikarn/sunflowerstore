@@ -345,21 +345,51 @@ header {
   margin-left: 4px;
 }
 
-#back-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #fa5304;
-  color: white;
+.back-to-top {
+  position:fixed;
+  bottom: 10px;
+  right: 10px;
   border: none;
   border-radius: 50%;
   padding: 10px;
   cursor: pointer;
   display: none;
-  transition: background-color 0,3, transform 0,3;
+  transition: transform 0,3;
    /* Ban đầu không hiển thị */
 }
-#back-to-top:hover {
-  background-color: #e04d00;
+.back-to-top:hover {
   transform: scale(1.1);
+}
+.footer {
+  background: #fa5304;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+}
+.footer p {
+  margin: 0;
+  font-size: 14px;
+}
+.news-grid{
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #1a1a1a;
+  padding:20px 0;
+}
+.news-item {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  transition: transform 0.2s;
+  color:black;
+}
+.tintuc img {
+  width: 20px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
 }
