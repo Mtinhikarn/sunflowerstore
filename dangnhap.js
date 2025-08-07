@@ -39,7 +39,7 @@ function login(event) {
 
   if (matchedUser) {
     localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("loggedInUser", username);
+    localStorage.setItem("loggedInUser", matchedUser.username);
 
     if (matchedUser.isAdmin) {
       localStorage.setItem("isAdmin", "true");
@@ -55,4 +55,45 @@ function login(event) {
     loginMessage.textContent = "Tài khoản hoặc mật khẩu không đúng!";
     loginMessage.style.color = "red";
   }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const loginLink = document.getElementById("login-link");
+  const logoutBtn = document.getElementById("logout-btn");
+  const userInfo = document.getElementById("user-info");
+
+  const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (isLoggedIn && loggedInUser) {
+    // Ẩn nút Đăng nhập, hiện nút Đăng xuất và tên người dùng
+    loginLink.style.display = "none";
+    logoutBtn.style.display = "inline";
+    userInfo.textContent = `Xin chào, ${loggedInUser}`;
+  } else {
+    // Nếu chưa đăng nhập, ẩn nút đăng xuất
+    loginLink.style.display = "inline";
+    logoutBtn.style.display = "none";
+    userInfo.textContent = "";
+  }
+
+  // Gán sự kiện đăng xuất
+  logoutBtn.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (confirm("Bạn có chắc chắn muốn đăng xuất không?")) {
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("loggedInUser");
+      localStorage.removeItem("isAdmin");
+      window.location.href = "index.html";
+    }
+  });
+});
+
+let users = [];
+try {
+  const stored = localStorage.getItem("users");
+  users = stored ? JSON.parse(stored) : [];
+} catch (e) {
+  console.error("Dữ liệu bị lỗi:", e);
+  localStorage.removeItem("users"); // Xóa dữ liệu sai
 }
