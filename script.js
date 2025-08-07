@@ -124,6 +124,32 @@ function login() {
   }
 }
 
+window.onload = function () {
+  const loginLink = document.getElementById("login-link");
+  const userInfo = document.getElementById("user-info");
+
+  const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+  const loggedInUser = localStorage.getItem("loggedInUser");
+
+  if (isLoggedIn && loggedInUser) {
+    loginLink.textContent = "Đăng xuất";
+    loginLink.href = "#";
+    userInfo.textContent = `Xin chào, ${loggedInUser}`;
+
+    loginLink.addEventListener("click", function () {
+      if (confirm("Bạn có chắc muốn đăng xuất không?")) {
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("loggedInUser");
+        localStorage.removeItem("isAdmin");
+        localStorage.removeItem("cart"); // nếu bạn lưu giỏ hàng riêng
+
+        alert("Đã đăng xuất thành công!");
+        window.location.href = "index.html"; // quay lại trang chính
+      }
+    });
+  }
+};
+
 
 
 function filterSuggestions() {
@@ -184,7 +210,8 @@ backToTopButton.onclick = function() {
 
   window.onload = function () {
   const loggedIn = localStorage.getItem("loggedIn");
-  const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  const user = localStorage.getItem("loggedInUser");
+
 
   const loginLink = document.getElementById("login-link");
   const logoutBtn = document.getElementById("logout-btn");
