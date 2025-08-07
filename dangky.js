@@ -26,6 +26,7 @@ function handleRegister(event) {
     phone,
     email,
     address,
+    isAdmin: username === "admin"  // Nếu username là "admin", đánh dấu là admin
   };
 
   users.push(newUser);

@@ -1,11 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+  <meta charset="UTF-8">
   <title>Chi tiết sản phẩm</title>
   <link rel="stylesheet" href="sanpham.css">
 </head>
 <body>
-  <div id="product-detail"></div>
-  <script src="sanpham.js"></script>
+  <div id="product-detail" style="text-align: center;"></div>
+
+  <script>
+    const product = JSON.parse(localStorage.getItem("selectedProduct"));
+
+    if (product) {
+      document.getElementById("product-detail").innerHTML = `
+        <h2>${product.name}</h2>
+        <img src="${product.image}" width="250">
+        <p style="font-size:18px; margin: 10px;">Giá: ${product.price.toLocaleString()} đ</p>
+        <p style="max-width: 600px; margin: auto;">${product.description}</p>
+        <br>
+        <button onclick="addToCart('${product.id}')">🛒 Thêm vào giỏ hàng</button>
+        <button onclick="buyNow('${product.id}')">🛍️ Mua ngay</button>
+        <button onclick="window.location.href='index.html'">⬅ Trở về</button>
+      `;
+    } else {
+      document.getElementById("product-detail").innerHTML = `<p>Không có thông tin sản phẩm.</p>`;
+    }
+
+    function addToCart(id) {
+      if (!localStorage.getItem("loggedIn")) {
+        alert("Bạn cần đăng nhập để thêm vào giỏ hàng.");
+        window.location.href = "dangnhap.html";
+        return;
+      }
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push(id);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert("Đã thêm vào giỏ hàng!");
+    }
+
+    function buyNow(id) {
+      if (!localStorage.getItem("loggedIn")) {
+        alert("Bạn cần đăng nhập để mua hàng.");
+        window.location.href = "dangnhap.html";
+        return;
+      }
+      const cart = [id]; // chỉ mua sản phẩm này
+      localStorage.setItem("cart", JSON.stringify(cart));
+      window.location.href = "giohang.html"; // chuyển đến trang giỏ hàng để thanh toán
+    }
+  </script>
 </body>
 </html>

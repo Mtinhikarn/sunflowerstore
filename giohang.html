@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
+  <meta charset="UTF-8">
   <title>Giỏ hàng</title>
   <link rel="stylesheet" href="giohang.css">
 </head>
 <body>
   <div class="cart-container">
-    <h2>Giỏ hàng của bạn</h2>
+    <h2>Giỏ hàng của bạn 🛒</h2>
     <div id="cart-items"></div>
-    <p id="total"></p>
+
+    <p id="total">Tổng tiền: 0 VND</p>
+
+    <div id="payment-section" style="display:none;">
+      <label>Chọn hình thức thanh toán:</label>
+      <select id="payment-method">
+        <option value="">-- Chọn phương thức --</option>
+        <option value="cash">Tiền mặt</option>
+        <option value="bank">Chuyển khoản</option>
+      </select>
+      <div id="bank-info" style="display:none; margin-top:10px;">
+        <p><strong>Ngân hàng:</strong> MB BANK</p>
+        <p><strong>Số tài khoản:</strong> 0768053630</p>
+      </div>
+      <button onclick="confirmPayment()">Xác nhận thanh toán</button>
+    </div>
+
     <button onclick="buySelected()">Mua các sản phẩm đã chọn</button>
     <button onclick="clearCart()">Hủy tất cả</button>
-    <a href="index.html">⬅ Trở về trang chính</a>
+    <a class="back-button" href="index.html">⬅ Trở về trang chính</a>
   </div>
   <script src="giohang.js"></script>
+  <div class="payment-method-container">
+  <h3>Chọn hình thức thanh toán:</h3>
+  <select id="payment-method">
+    <option value="cash">Tiền mặt</option>
+    <option value="bank">Chuyển khoản</option>
+  </select>
+
+  <div id="bank-info" style="display:none; margin-top: 10px;">
+    <p><strong>Ngân hàng:</strong> MB BANK</p>
+    <p><strong>Số tài khoản:</strong> 0768053630</p>
+  </div>
+
+  <button onclick="confirmPayment()">Thanh toán</button>
+</div>
+
 </body>
 </html>

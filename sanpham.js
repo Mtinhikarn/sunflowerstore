@@ -6,15 +6,29 @@ const product = products.find(p => p.id === id);
 
 const container = document.getElementById("product-detail");
 
-if (product) {
-  container.innerHTML = `
-    <h2>${product.name}</h2>
-    <img src="${product.image}" width="300">
-    <p>${product.description}</p>
-    <p>Giá: ${product.price} VND</p>
-    <button onclick="requireLoginForAction(() => addToCart('${product.id}'))">Thêm giỏ hàng</button>
-    <button onclick="requireLoginForAction(() => alert('Mua hàng thành công!'))">Mua ngay</button>
+products.forEach(product => {
+  const productHTML = `
+    <div class="product-card">
+      <img src="${product.image}" alt="${product.name}" width="200">
+      <h3>${product.name}</h3>
+      <p>Giá: ${product.price.toLocaleString()}đ</p>
+      <a href="chitiet.html?id=${product.id}">
+        <button>Xem chi tiết</button>
+      </a>
+    </div>
   `;
-} else {
-  container.innerHTML = "<p>Không tìm thấy sản phẩm.</p>";
+  container.innerHTML += productHTML;
+});
+
+
+function directToCheckout(id) {
+  const currentUser = localStorage.getItem("loggedInUser");
+  if (!currentUser) return;
+
+  const cart = JSON.parse(localStorage.getItem("cart_" + currentUser)) || [];
+  cart.push(id);
+  localStorage.setItem("cart_" + currentUser, JSON.stringify(cart));
+  window.location.href = "giohang.html";
 }
+
+

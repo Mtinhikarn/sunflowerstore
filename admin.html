@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Trang Quản Trị - Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="admin-container">
+    <h2>Xin chào, Quản trị viên 👑</h2>
+
+    <div class="section">
+      <h3>📊 Doanh thu</h3>
+      <p id="revenue">Đang tính...</p>
+    </div>
+
+    <div class="section">
+      <h3>📦 Hàng tồn kho</h3>
+      <ul id="inventory-list"></ul>
+    </div>
+
+    <div class="section">
+      <h3>👥 Tài khoản người dùng</h3>
+      <p id="account-count">Tổng tài khoản: ...</p>
+      <ul id="user-list"></ul>
+    </div>
+
+    <div class="section">
+      <h3>🧾 Lịch sử mua hàng</h3>
+      <ul id="purchase-history"></ul>
+    </div>
+
+    <button onclick="logout()">Đăng xuất</button>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

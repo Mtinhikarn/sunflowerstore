@@ -72,18 +72,6 @@ function showLogin() {
 }
 
 
-const products = [
-  "Chuột Dareu EM908",
-  "Chuột Dareu A918",
-  "Bàn phím Dareu EK87",
-  "Tai nghe Dareu EH925s",
-  "Chuột không dây Dareu LM115G",
-  "Chuột Dareu EM901",
-  "Bàn phím cơ Dareu EK1280",
-  "Tai nghe gaming Dareu A710"
-  // Thêm các sản phẩm khác ở đây
-];
-
 function filterSuggestions() {
   const input = document.getElementById("searchInput").value.toLowerCase();
   const suggestionsBox = document.getElementById("suggestions");
@@ -154,11 +142,31 @@ function filterSuggestions() {
   });
 }
 function addToCart(id) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const user = localStorage.getItem("loggedInUser");
+  if (!user) {
+    alert("Vui lòng đăng nhập để thêm vào giỏ hàng.");
+    window.location.href = "dangnhap.html";
+    return;
+  }
+  const cartKey = `cart_${user}`;
+  const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
   cart.push(id);
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Đã thêm sản phẩm vào giỏ hàng.");
+  localStorage.setItem(cartKey, JSON.stringify(cart));
+  alert("✅ Đã thêm vào giỏ hàng!");
 }
+
+function buyNow(id) {
+  const user = localStorage.getItem("loggedInUser");
+  if (!user) {
+    alert("Vui lòng đăng nhập để mua sản phẩm.");
+    window.location.href = "dangnhap.html";
+    return;
+  }
+  const cartKey = `cart_${user}`;
+  localStorage.setItem(cartKey, JSON.stringify([id])); // chỉ mua 1 sản phẩm
+  window.location.href = "giohang.html";
+}
+
 const backToTopButton = document.querySelector('.back-to-top');
 window.onscroll = function() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -202,3 +210,10 @@ backToTopButton.onclick = function() {
 function quayLaiTrangChu() {
   window.location.href = "index.html";
 }
+
+function logout() {
+  localStorage.removeItem("loggedIn");
+  localStorage.removeItem("loggedInUser");
+  window.location.href = "index.html";
+}
+

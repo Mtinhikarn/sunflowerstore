@@ -1,0 +1,47 @@
+body {
+  background: #1a1a1a;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 40px;
+  text-align: center;
+}
+
+.admin-container {
+  max-width: 800px;
+  margin: auto;
+  background: #333;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+.section {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.section h3 {
+  color: #fa5304;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 5px 0;
+}
+
+button {
+  background-color: #fa5304;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #e14a00;
+}
