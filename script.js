@@ -167,18 +167,28 @@ function filterSuggestions() {
     suggestionsBox.appendChild(div);
   });
 }
-function addToCart(id) {
-  const user = localStorage.getItem("loggedInUser");
-  if (!user) {
-    alert("Vui lòng đăng nhập để thêm vào giỏ hàng.");
+function addToCart(productId) {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    alert("Bạn cần đăng nhập để thêm sản phẩm vào giỏ hàng.");
     window.location.href = "dangnhap.html";
     return;
   }
-  const cartKey = `cart_${user}`;
-  const cart = JSON.parse(localStorage.getItem(cartKey)) || [];
-  cart.push(id);
-  localStorage.setItem(cartKey, JSON.stringify(cart));
-  alert("✅ Đã thêm vào giỏ hàng!");
+
+  // Lấy giỏ hàng của người dùng từ localStorage
+  let carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+
+  // Nếu người dùng chưa có giỏ hàng thì tạo mới
+  if (!carts[loggedInUser]) {
+    carts[loggedInUser] = [];
+  }
+
+  // Thêm sản phẩm vào giỏ hàng của người dùng
+  carts[loggedInUser].push(productId);
+
+  // Lưu lại vào localStorage
+  localStorage.setItem("userCarts", JSON.stringify(carts));
+  alert("Đã thêm vào giỏ hàng!");
 }
 
 function buyNow(id) {

@@ -32,3 +32,24 @@ function directToCheckout(id) {
 }
 
 
+function checkout() {
+  const loggedInUser = localStorage.getItem("loggedInUser");
+  if (!loggedInUser) {
+    alert("Bạn cần đăng nhập để thanh toán.");
+    return;
+  }
+
+  const carts = JSON.parse(localStorage.getItem("userCarts")) || {};
+  const userCart = carts[loggedInUser] || [];
+
+  if (userCart.length === 0) {
+    alert("Giỏ hàng trống.");
+    return;
+  }
+
+  alert("Thanh toán thành công!");
+  // Reset giỏ hàng người dùng
+  carts[loggedInUser] = [];
+  localStorage.setItem("userCarts", JSON.stringify(carts));
+  window.location.reload();
+}

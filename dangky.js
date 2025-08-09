@@ -39,3 +39,4 @@ function handleRegister(event) {
   alert("Đăng ký thành công!");
   window.location.href = "dangnhap.html";
 }
+
